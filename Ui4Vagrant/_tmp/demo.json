@@ -21,7 +21,7 @@
       "local_data_path": "C:/Dev/Code/devops/postgresql/.vagrant",
       "name": "Yii2",
       "provider": "virtualbox",
-      "state": "poweroff",
+      "state": "running",
       "vagrantfile_name": null,
       "vagrantfile_path": "C:/Dev/Code/devops/postgresql",
       "updated_at": null,

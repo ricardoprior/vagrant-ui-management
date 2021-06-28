@@ -36,7 +36,7 @@ namespace Ui4Vagrant.UI
             this.BtUp = new System.Windows.Forms.Button();
             this.BtDown = new System.Windows.Forms.Button();
             this.BtRefresh = new System.Windows.Forms.Button();
-            this.BkgLoadVmInfo = new System.ComponentModel.BackgroundWorker();
+            this.BgkUp = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label1
@@ -106,10 +106,9 @@ namespace Ui4Vagrant.UI
             this.BtRefresh.UseVisualStyleBackColor = true;
             this.BtRefresh.Click += new System.EventHandler(this.BtRefresh_Click);
             // 
-            // BkgLoadVmInfo
+            // BgkUp
             // 
-            this.BkgLoadVmInfo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BkgLoadVmInfo_DoWork);
-            this.BkgLoadVmInfo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BkgLoadVmInfo_RunWorkerCompleted);
+            this.BgkUp.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgkUp_DoWork);
             // 
             // VmControlTemplate
             // 
@@ -124,7 +123,6 @@ namespace Ui4Vagrant.UI
             this.Controls.Add(this.label1);
             this.Name = "VmControlTemplate";
             this.Size = new System.Drawing.Size(150, 154);
-            this.Load += new System.EventHandler(this.VmControlTemplate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +137,6 @@ namespace Ui4Vagrant.UI
         private System.Windows.Forms.Button BtUp;
         private System.Windows.Forms.Button BtDown;
         private System.Windows.Forms.Button BtRefresh;
-        private System.ComponentModel.BackgroundWorker BkgLoadVmInfo;
+        private System.ComponentModel.BackgroundWorker BgkUp;
     }
 }

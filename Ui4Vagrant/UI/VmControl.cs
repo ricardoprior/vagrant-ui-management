@@ -11,8 +11,6 @@ namespace Ui4Vagrant.UI
     {
         private readonly string UserHome;
         private MachinesIndex list;
-        private int MAX_ROW = 4;
-        private int MAX_COL = 4;
 
         public VmControl()
         {
@@ -40,13 +38,10 @@ namespace Ui4Vagrant.UI
         {
             foreach (VirtualMachine vm in list.Machines.Values)
             {
-                VmControlTemplate machineControls = new VmControlTemplate(vm);
+                VmControlTemplate machineControls = new VmControlTemplate(vm, consoleControl1);
                 flowLayoutPanel1.Controls.Add(machineControls);
                 machineControls.Show();
             }
-
-            //string path = @"_tmp\up.bat";
-            //consoleControl1.StartProcess(path, @"cd c:\dev\code\devops\postgresql");
         }
     }
 }
