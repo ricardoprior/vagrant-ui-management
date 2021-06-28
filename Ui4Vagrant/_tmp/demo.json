@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "machines": {
+    "f5d08b66e1ce4f15b077244ab4530839": {
+      "local_data_path": "C:/Dev/Code/devops/postgresql/.vagrant",
+      "name": "Postgresql",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/postgresql",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    },
+    "asd": {
+      "local_data_path": "C:/Dev/Code/devops/postgresql/.vagrant",
+      "name": "Yii2",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/postgresql",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    }
+  }
+}
