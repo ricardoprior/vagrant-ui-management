@@ -23,11 +23,21 @@ namespace Ui4Vagrant.UI
 
         private void VmControl_Load(object sender, EventArgs e)
         {
-            BkgLoadMachines.RunWorkerAsync();
+            BkgLoadMachines.RunWorkerAsync(argument: false);
         }
 
         private void BkgLoadMachines_DoWork(object sender, DoWorkEventArgs e)
         {
+            bool wait = (bool)e.Argument;
+
+            if (wait)
+            {
+                while (BkgExecuteCommands.IsBusy || consoleControl1.IsProcessRunning)
+                {
+
+                }
+            }
+
             string path = @$"{UserHome}\.vagrant.d\data\machine-index\index";
             if (File.Exists(path))
             {
@@ -60,7 +70,7 @@ namespace Ui4Vagrant.UI
         {
             if (!BkgLoadMachines.IsBusy)
             {
-                BkgLoadMachines.RunWorkerAsync();
+                BkgLoadMachines.RunWorkerAsync(argument: false);
             }
         }
 
@@ -108,7 +118,7 @@ namespace Ui4Vagrant.UI
                 return;
             }
 
-            BkgLoadMachines.RunWorkerAsync();
+            BkgLoadMachines.RunWorkerAsync(argument: true);
         }
 
         public void ExecuteCommand(string cmd)
