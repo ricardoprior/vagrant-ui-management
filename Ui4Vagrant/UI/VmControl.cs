@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Ui4Vagrant.Support;
@@ -11,6 +13,7 @@ namespace Ui4Vagrant.UI
     {
         private readonly string UserHome;
         private MachinesIndex list;
+        private List<string> workList = new List<string>();
 
         public VmControl()
         {
@@ -35,33 +38,42 @@ namespace Ui4Vagrant.UI
 
         private void BkgLoadMachines_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            flowLayoutPanel1.Controls.Clear();
+
+            if (list.Machines.Values.Count == 0)
+            {
+                flowLayoutPanel1.Controls.Add(new Label()
+                {
+                    Text = "No vms found."
+                });
+                return;
+            }
+
             foreach (VirtualMachine vm in list.Machines.Values)
             {
-                VmControlTemplate machineControls = new VmControlTemplate(vm, consoleControl1);
+                VmControlTemplate machineControls = new VmControlTemplate(vm, consoleControl1, BkgLoadMachines);
                 flowLayoutPanel1.Controls.Add(machineControls);
                 machineControls.Show();
             }
         }
 
-        private void apenasFavoritosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BtRefresh_Click(object sender, EventArgs e)
         {
-            if (apenasFavoritosToolStripMenuItem.Checked)
+            if (!BkgLoadMachines.IsBusy)
             {
-
+                BkgLoadMachines.RunWorkerAsync();
             }
         }
 
-        private void refreshToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        private void BtClearConsoleOutput_Click(object sender, EventArgs e)
         {
-
+            if (!consoleControl1.IsProcessRunning)
+            {
+                consoleControl1.ClearOutput();
+            }
         }
 
-        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void apenasFavoritosToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        private void BtOnlyFavourites_CheckedChanged(object sender, EventArgs e)
         {
 
         }

@@ -33,9 +33,10 @@ namespace Ui4Vagrant.UI
             this.consoleControl1 = new ConsoleControl.ConsoleControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.geralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apenasFavoritosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtGeral = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtClearConsoleOutput = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtOnlyFavourites = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@ namespace Ui4Vagrant.UI
             // 
             // consoleControl1
             // 
+            this.consoleControl1.AutoScroll = true;
             this.consoleControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.consoleControl1.IsInputEnabled = true;
             this.consoleControl1.Location = new System.Drawing.Point(0, 277);
@@ -67,36 +69,46 @@ namespace Ui4Vagrant.UI
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.geralToolStripMenuItem});
+            this.BtGeral});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // geralToolStripMenuItem
+            // BtGeral
             // 
-            this.geralToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem,
-            this.apenasFavoritosToolStripMenuItem});
-            this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
-            this.geralToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.geralToolStripMenuItem.Text = "Geral";
+            this.BtGeral.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtRefresh,
+            this.BtClearConsoleOutput,
+            this.BtOnlyFavourites});
+            this.BtGeral.Name = "BtGeral";
+            this.BtGeral.Size = new System.Drawing.Size(46, 20);
+            this.BtGeral.Text = "Geral";
             // 
-            // refreshToolStripMenuItem
+            // BtClearConsoleOutput
             // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.BtClearConsoleOutput.Name = "BtClearConsoleOutput";
+            this.BtClearConsoleOutput.Size = new System.Drawing.Size(188, 22);
+            this.BtClearConsoleOutput.Text = "Clear Console Output";
+            this.BtClearConsoleOutput.Click += new System.EventHandler(this.BtClearConsoleOutput_Click);
             // 
-            // apenasFavoritosToolStripMenuItem
+            // BtRefresh
             // 
-            this.apenasFavoritosToolStripMenuItem.CheckOnClick = true;
-            this.apenasFavoritosToolStripMenuItem.Name = "apenasFavoritosToolStripMenuItem";
-            this.apenasFavoritosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.apenasFavoritosToolStripMenuItem.Text = "Apenas Favoritos";
-            this.apenasFavoritosToolStripMenuItem.CheckedChanged += new System.EventHandler(this.apenasFavoritosToolStripMenuItem_CheckedChanged);
+            this.BtRefresh.Name = "BtRefresh";
+            this.BtRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.BtRefresh.Size = new System.Drawing.Size(180, 22);
+            this.BtRefresh.Text = "Refresh";
+            this.BtRefresh.Click += new System.EventHandler(this.BtRefresh_Click);
+            // 
+            // BtOnlyFavourites
+            // 
+            this.BtOnlyFavourites.CheckOnClick = true;
+            this.BtOnlyFavourites.Enabled = false;
+            this.BtOnlyFavourites.Name = "BtOnlyFavourites";
+            this.BtOnlyFavourites.Size = new System.Drawing.Size(188, 22);
+            this.BtOnlyFavourites.Text = "Only Favourites";
+            this.BtOnlyFavourites.CheckedChanged += new System.EventHandler(this.BtOnlyFavourites_CheckedChanged);
             // 
             // VmControl
             // 
@@ -117,14 +129,14 @@ namespace Ui4Vagrant.UI
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker BkgLoadMachines;
         private ConsoleControl.ConsoleControl consoleControl1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem geralToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem apenasFavoritosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BtGeral;
+        private System.Windows.Forms.ToolStripMenuItem BtOnlyFavourites;
+        private System.Windows.Forms.ToolStripMenuItem BtRefresh;
+        private System.ComponentModel.BackgroundWorker BkgLoadMachines;
+        private System.Windows.Forms.ToolStripMenuItem BtClearConsoleOutput;
     }
 }
 
