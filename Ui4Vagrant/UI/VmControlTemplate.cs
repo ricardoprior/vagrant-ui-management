@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -12,9 +10,6 @@ namespace Ui4Vagrant.UI
     public partial class VmControlTemplate : UserControl
     {
         private readonly VirtualMachine vm;
-        private readonly ConsoleControl.ConsoleControl mainConsole;
-        private readonly BackgroundWorker BkgLoadMachines;
-        private List<string> WorkList = new List<string>();
 
         private const string VAGRANT_UP = @"/C cd @path & cls & vagrant up";
         private const string VAGRANT_HALT = @"/C cd @path & cls & vagrant halt";
@@ -31,11 +26,9 @@ namespace Ui4Vagrant.UI
             InitializeComponent();
         }
 
-        public VmControlTemplate(VirtualMachine _vm, ConsoleControl.ConsoleControl _console, BackgroundWorker _bkgLoadMachines, List<string> _workList) : this()
+        public VmControlTemplate(VirtualMachine _vm) : this()
         {
             vm = _vm;
-            mainConsole = _console;
-            BkgLoadMachines = _bkgLoadMachines;
 
             LblName.Text = vm.Name;
             UpdateButtonState(vm.State);
@@ -52,22 +45,18 @@ namespace Ui4Vagrant.UI
 
         private void BtUp_Click(object sender, EventArgs e)
         {
-            mainConsole.StartProcess("cmd.exe", VAGRANT_UP.Replace("@path", vm.VagrantFilePath));
-
-            if (!BkgLoadMachines.IsBusy)
-            {
-                BkgLoadMachines.RunWorkerAsync();
-            }
+            string cmd = VAGRANT_UP.Replace("@path", vm.VagrantFilePath);
+            BtUp.Enabled = false;
+            //TODO: Validar 
+            ((VmControl)Parent.Parent).ExecuteCommand(cmd);
         }
 
         private void BtDown_Click(object sender, EventArgs e)
         {
-            mainConsole.StartProcess("cmd.exe", VAGRANT_HALT.Replace("@path", vm.VagrantFilePath));
-
-            if (!BkgLoadMachines.IsBusy)
-            {
-                BkgLoadMachines.RunWorkerAsync();
-            }
+            string cmd = VAGRANT_HALT.Replace("@path", vm.VagrantFilePath);
+            BtDown.Enabled = false;
+            //TODO: Validar 
+            ((VmControl)Parent.Parent).ExecuteCommand(cmd);
         }
 
         private void BtAdvancedOptions_Click(object sender, EventArgs e)
@@ -98,12 +87,10 @@ namespace Ui4Vagrant.UI
                 return;
             }
 
-            Process.Start("cmd.exe", VAGRANT_DESTROY.Replace("@path", vm.VagrantFilePath));
-
-            if (!BkgLoadMachines.IsBusy)
-            {
-                BkgLoadMachines.RunWorkerAsync();
-            }
+            string cmd = VAGRANT_DESTROY.Replace("@path", vm.VagrantFilePath);
+            BtDestroy.Enabled = false;
+            //TODO: Validar 
+            ((VmControl)Parent.Parent).ExecuteCommand(cmd);
         }
 
         public void UpdateButtonState(string state)
@@ -140,31 +127,3 @@ namespace Ui4Vagrant.UI
         }
     }
 }
-
-/* para ref
-
-int exitCode;
-ProcessStartInfo processInfo;
-Process process;
-processInfo = new ProcessStartInfo(""cmd.exe".exe", VAGRANT_UP.Replace("@path", vm.VagrantFilePath));
-processInfo.CreateNoWindow = true;
-processInfo.UseShellExecute = false;
- *** Redirect the output ***
-processInfo.RedirectStandardError = true;
-processInfo.RedirectStandardOutput = true;
-
-process = Process.Start(processInfo);
-process.WaitForExit();
-
- *** Read the streams ***
- Warning: This approach can lead to deadlocks, see Edit #2
-string output = process.StandardOutput.ReadToEnd();
-string error = process.StandardError.ReadToEnd();
-
-exitCode = process.ExitCode;
-
-Console.WriteLine("output>>" + (String.IsNullOrEmpty(output) ? "(none)" : output));
-Console.WriteLine("error>>" + (String.IsNullOrEmpty(error) ? "(none)" : error));
-Console.WriteLine("ExitCode: " + exitCode.ToString(), "ExecuteCommand");
-process.Close();
-*/
