@@ -26,8 +26,8 @@ namespace Ui4Vagrant.UI
 
         private void BkgLoadMachines_DoWork(object sender, DoWorkEventArgs e)
         {
-            //string path = @$"{UserHome}\.vagrant.d\data\machine-index\index";
-            string path = @"_tmp\demo.json";
+            string path = @$"{UserHome}\.vagrant.d\data\machine-index\index";
+            //string path = @"_tmp\demo.json";
             if (File.Exists(path))
             {
                 list = JsonConvert.DeserializeObject<MachinesIndex>(File.ReadAllText(path));
