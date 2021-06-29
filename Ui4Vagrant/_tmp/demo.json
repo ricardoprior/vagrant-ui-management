@@ -18,12 +18,92 @@
       }
     },
     "asd": {
-      "local_data_path": "C:/Dev/Code/devops/postgresql/.vagrant",
+      "local_data_path": "C:/Dev/Code/devops/x/.vagrant",
       "name": "Yii2",
       "provider": "virtualbox",
       "state": "running",
       "vagrantfile_name": null,
-      "vagrantfile_path": "C:/Dev/Code/devops/postgresql",
+      "vagrantfile_path": "C:/Dev/Code/devops/x",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    },
+    "dbasd": {
+      "local_data_path": "C:/Dev/Code/devops/x/.vagrant",
+      "name": "Mysql",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/x",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    },
+    "jfghgh": {
+      "local_data_path": "C:/Dev/Code/devops/x/.vagrant",
+      "name": "SQL",
+      "provider": "virtualbox",
+      "state": "aborted",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/x",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    },
+    "asfdgfsfg": {
+      "local_data_path": "C:/Dev/Code/devops/x/.vagrant",
+      "name": "php",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/x",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    },
+    "3441421": {
+      "local_data_path": "C:/Dev/Code/devops/x/.vagrant",
+      "name": "test2",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/x",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/jessie64",
+          "provider": "virtualbox",
+          "version": "8.11.1"
+        }
+      }
+    },
+    "agv": {
+      "local_data_path": "C:/Dev/Code/devops/x/.vagrant",
+      "name": "test2",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/x",
       "updated_at": null,
       "extra_data": {
         "box": {
