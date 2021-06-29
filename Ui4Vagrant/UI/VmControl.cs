@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Ui4Vagrant.Support;
@@ -13,7 +12,7 @@ namespace Ui4Vagrant.UI
     {
         private readonly string UserHome;
         private MachinesIndex list;
-        private List<string> workList = new List<string>();
+        private readonly List<string> WorkList = new List<string>();
 
         public VmControl()
         {
@@ -51,7 +50,7 @@ namespace Ui4Vagrant.UI
 
             foreach (VirtualMachine vm in list.Machines.Values)
             {
-                VmControlTemplate machineControls = new VmControlTemplate(vm, consoleControl1, BkgLoadMachines);
+                VmControlTemplate machineControls = new VmControlTemplate(vm);
                 flowLayoutPanel1.Controls.Add(machineControls);
                 machineControls.Show();
             }
@@ -76,6 +75,56 @@ namespace Ui4Vagrant.UI
         private void BtOnlyFavourites_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BkgExecuteCommands_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string cmd = (string)e.Argument;
+            if (consoleControl1.IsProcessRunning)
+            {
+                while (consoleControl1.IsProcessRunning)
+                {
+
+                }
+
+                System.Threading.Thread.Sleep(1000);
+            }
+
+            e.Result = cmd;
+        }
+
+        private void BkgExecuteCommands_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            string cmd = (string)e.Result;
+            consoleControl1.StartProcess("cmd.exe", cmd);
+
+            WorkList.Remove(cmd);
+
+            BtQueue.Text = "Work List: " + WorkList.Count.ToString();
+
+            if (WorkList.Count > 0)
+            {
+                BkgExecuteCommands.RunWorkerAsync(argument: WorkList[0]);
+                return;
+            }
+
+            BkgLoadMachines.RunWorkerAsync();
+        }
+
+        public void ExecuteCommand(string cmd)
+        {
+            if (!WorkList.Contains(cmd))
+            {
+                WorkList.Add(cmd);
+            }
+
+            BtQueue.Text = "Work List: " + WorkList.Count.ToString();
+
+            if (WorkList.Count > 0 && !BkgExecuteCommands.IsBusy)
+            {
+                BkgExecuteCommands.RunWorkerAsync(argument: WorkList[0]);
+                return;
+            }
         }
     }
 }

@@ -34,9 +34,11 @@ namespace Ui4Vagrant.UI
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.BtGeral = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtClearConsoleOutput = new System.Windows.Forms.ToolStripMenuItem();
             this.BtRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtClearConsoleOutput = new System.Windows.Forms.ToolStripMenuItem();
             this.BtOnlyFavourites = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtQueue = new System.Windows.Forms.ToolStripMenuItem();
+            this.BkgExecuteCommands = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +71,8 @@ namespace Ui4Vagrant.UI
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtGeral});
+            this.BtGeral,
+            this.BtQueue});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -86,20 +89,20 @@ namespace Ui4Vagrant.UI
             this.BtGeral.Size = new System.Drawing.Size(46, 20);
             this.BtGeral.Text = "Geral";
             // 
+            // BtRefresh
+            // 
+            this.BtRefresh.Name = "BtRefresh";
+            this.BtRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.BtRefresh.Size = new System.Drawing.Size(188, 22);
+            this.BtRefresh.Text = "Refresh";
+            this.BtRefresh.Click += new System.EventHandler(this.BtRefresh_Click);
+            // 
             // BtClearConsoleOutput
             // 
             this.BtClearConsoleOutput.Name = "BtClearConsoleOutput";
             this.BtClearConsoleOutput.Size = new System.Drawing.Size(188, 22);
             this.BtClearConsoleOutput.Text = "Clear Console Output";
             this.BtClearConsoleOutput.Click += new System.EventHandler(this.BtClearConsoleOutput_Click);
-            // 
-            // BtRefresh
-            // 
-            this.BtRefresh.Name = "BtRefresh";
-            this.BtRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.BtRefresh.Size = new System.Drawing.Size(180, 22);
-            this.BtRefresh.Text = "Refresh";
-            this.BtRefresh.Click += new System.EventHandler(this.BtRefresh_Click);
             // 
             // BtOnlyFavourites
             // 
@@ -109,6 +112,19 @@ namespace Ui4Vagrant.UI
             this.BtOnlyFavourites.Size = new System.Drawing.Size(188, 22);
             this.BtOnlyFavourites.Text = "Only Favourites";
             this.BtOnlyFavourites.CheckedChanged += new System.EventHandler(this.BtOnlyFavourites_CheckedChanged);
+            // 
+            // BtQueue
+            // 
+            this.BtQueue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtQueue.Name = "BtQueue";
+            this.BtQueue.Size = new System.Drawing.Size(97, 20);
+            this.BtQueue.Text = "Work Queue: 0";
+            this.BtQueue.Visible = false;
+            // 
+            // BkgExecuteCommands
+            // 
+            this.BkgExecuteCommands.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BkgExecuteCommands_DoWork);
+            this.BkgExecuteCommands.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BkgExecuteCommands_RunWorkerCompleted);
             // 
             // VmControl
             // 
@@ -137,6 +153,8 @@ namespace Ui4Vagrant.UI
         private System.Windows.Forms.ToolStripMenuItem BtRefresh;
         private System.ComponentModel.BackgroundWorker BkgLoadMachines;
         private System.Windows.Forms.ToolStripMenuItem BtClearConsoleOutput;
+        private System.ComponentModel.BackgroundWorker BkgExecuteCommands;
+        private System.Windows.Forms.ToolStripMenuItem BtQueue;
     }
 }
 
