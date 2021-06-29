@@ -32,6 +32,11 @@ namespace Ui4Vagrant.UI
             this.BkgLoadMachines = new System.ComponentModel.BackgroundWorker();
             this.consoleControl1 = new ConsoleControl.ConsoleControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.geralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apenasFavoritosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BkgLoadMachines
@@ -54,10 +59,44 @@ namespace Ui4Vagrant.UI
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 277);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 253);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.geralToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // geralToolStripMenuItem
+            // 
+            this.geralToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.apenasFavoritosToolStripMenuItem});
+            this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
+            this.geralToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.geralToolStripMenuItem.Text = "Geral";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            // 
+            // apenasFavoritosToolStripMenuItem
+            // 
+            this.apenasFavoritosToolStripMenuItem.CheckOnClick = true;
+            this.apenasFavoritosToolStripMenuItem.Name = "apenasFavoritosToolStripMenuItem";
+            this.apenasFavoritosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.apenasFavoritosToolStripMenuItem.Text = "Apenas Favoritos";
+            this.apenasFavoritosToolStripMenuItem.CheckedChanged += new System.EventHandler(this.apenasFavoritosToolStripMenuItem_CheckedChanged);
             // 
             // VmControl
             // 
@@ -66,10 +105,14 @@ namespace Ui4Vagrant.UI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.consoleControl1);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "VmControl";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.VmControl_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -78,6 +121,10 @@ namespace Ui4Vagrant.UI
         private System.ComponentModel.BackgroundWorker BkgLoadMachines;
         private ConsoleControl.ConsoleControl consoleControl1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem geralToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem apenasFavoritosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
 

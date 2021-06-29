@@ -27,7 +27,6 @@ namespace Ui4Vagrant.UI
         private void BkgLoadMachines_DoWork(object sender, DoWorkEventArgs e)
         {
             string path = @$"{UserHome}\.vagrant.d\data\machine-index\index";
-            //string path = @"_tmp\demo.json";
             if (File.Exists(path))
             {
                 list = JsonConvert.DeserializeObject<MachinesIndex>(File.ReadAllText(path));
@@ -42,6 +41,29 @@ namespace Ui4Vagrant.UI
                 flowLayoutPanel1.Controls.Add(machineControls);
                 machineControls.Show();
             }
+        }
+
+        private void apenasFavoritosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (apenasFavoritosToolStripMenuItem.Checked)
+            {
+
+            }
+        }
+
+        private void refreshToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void apenasFavoritosToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
