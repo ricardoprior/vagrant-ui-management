@@ -1,1 +1,181 @@
-{"version":1,"machines":{"915040672cce43449dc1f7505e9f3d3b":{"local_data_path":"C:/Dev/Code/devops-vagrant-dev/envs/dev/erofio-pg/.vagrant","name":"erofio-pg","provider":"virtualbox","state":"poweroff","vagrantfile_name":null,"vagrantfile_path":"C:/Dev/Code/devops-vagrant-dev/envs/dev/erofio-pg","updated_at":null,"extra_data":{"box":{"name":"debian/buster64","provider":"virtualbox","version":"10.4.0"}}},"2a115544c5564bed80b88d6d9b488fa6":{"local_data_path":"C:/Dev/Code/devops/envs/dev/erofio-ftp/.vagrant","name":"erofio-ftp","provider":"virtualbox","state":"poweroff","vagrantfile_name":null,"vagrantfile_path":"C:/Dev/Code/devops/envs/dev/erofio-ftp","updated_at":null,"extra_data":{"box":{"name":"debian/buster64","provider":"virtualbox","version":"10.4.0"}}},"ccd31f259b9c4c3b9a8eb53aa7cc5ea2":{"local_data_path":"C:/Dev/Code/devops/envs/dev/erofio-mysql/.vagrant","name":"erofio-mysql","provider":"virtualbox","state":"poweroff","vagrantfile_name":null,"vagrantfile_path":"C:/Dev/Code/devops/envs/dev/erofio-mysql","updated_at":null,"extra_data":{"box":{"name":"debian/buster64","provider":"virtualbox","version":"10.4.0"}}},"7567927f930e4f83a139313316c6530c":{"local_data_path":"C:/Dev/Code/tuyere/Tuyere-REST/.vagrant","name":"tuyere","provider":"virtualbox","state":"running","vagrantfile_name":null,"vagrantfile_path":"C:/Dev/Code/tuyere/Tuyere-REST","updated_at":null,"extra_data":{"box":{"name":"debian/buster64","provider":"virtualbox","version":"10.4.0"}}},"87973f5f597742839a269fda6f4839a3":{"local_data_path":"c:/Dev/Code/backoffice/.vagrant","name":"php-dev","provider":"virtualbox","state":"running","vagrantfile_name":null,"vagrantfile_path":"c:/Dev/Code/backoffice","updated_at":null,"extra_data":{"box":{"name":"debian/buster64","provider":"virtualbox","version":"10.4.0"}}}}}
+{
+  "version": 1,
+  "machines": {
+    "915040672cce43449dc1f7505e9f3d3b": {
+      "local_data_path": "C:/Dev/Code/devops-vagrant-dev/envs/dev/erofio-pg/.vagrant",
+      "name": "erofio-pg",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops-vagrant-dev/envs/dev/erofio-pg",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "2a115544c5564bed80b88d6d9b488fa6": {
+      "local_data_path": "C:/Dev/Code/devops/envs/dev/erofio-ftp/.vagrant",
+      "name": "erofio-ftp",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/envs/dev/erofio-ftp",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "ccd31f259b9c4c3b9a8eb53aa7cc5ea2": {
+      "local_data_path": "C:/Dev/Code/devops/envs/dev/erofio-mysql/.vagrant",
+      "name": "erofio-mysql",
+      "provider": "virtualbox",
+      "state": "poweroff",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/devops/envs/dev/erofio-mysql",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "7567927f930e4f83a139313316c6530c": {
+      "local_data_path": "C:/Dev/Code/tuyere/Tuyere-REST/.vagrant",
+      "name": "tuyere",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "C:/Dev/Code/tuyere/Tuyere-REST",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "87973f5f597742839a269fda6f4839a3": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "asdsad": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "321fa": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "4ggsds21234": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "gffsadf452345dfs": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "1321fsadfdsf": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    },
+    "asddasdsaqwe423143214sad": {
+      "local_data_path": "c:/Dev/Code/backoffice/.vagrant",
+      "name": "php-dev",
+      "provider": "virtualbox",
+      "state": "running",
+      "vagrantfile_name": null,
+      "vagrantfile_path": "c:/Dev/Code/backoffice",
+      "updated_at": null,
+      "extra_data": {
+        "box": {
+          "name": "debian/buster64",
+          "provider": "virtualbox",
+          "version": "10.4.0"
+        }
+      }
+    }
+  }
+}

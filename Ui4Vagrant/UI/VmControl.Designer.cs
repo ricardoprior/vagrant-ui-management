@@ -38,6 +38,7 @@ namespace Ui4Vagrant.UI
             this.BtClearConsoleOutput = new System.Windows.Forms.ToolStripMenuItem();
             this.BtOnlyFavourites = new System.Windows.Forms.ToolStripMenuItem();
             this.BtQueue = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.BkgExecuteCommands = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,12 +53,12 @@ namespace Ui4Vagrant.UI
             this.consoleControl1.AutoScroll = true;
             this.consoleControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.consoleControl1.IsInputEnabled = true;
-            this.consoleControl1.Location = new System.Drawing.Point(0, 277);
+            this.consoleControl1.Location = new System.Drawing.Point(0, 357);
             this.consoleControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.consoleControl1.Name = "consoleControl1";
             this.consoleControl1.SendKeyboardCommandsToProcess = false;
             this.consoleControl1.ShowDiagnostics = false;
-            this.consoleControl1.Size = new System.Drawing.Size(800, 173);
+            this.consoleControl1.Size = new System.Drawing.Size(827, 173);
             this.consoleControl1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -65,17 +66,18 @@ namespace Ui4Vagrant.UI
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 253);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(827, 333);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BtGeral,
-            this.BtQueue});
+            this.BtQueue,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(827, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,6 +123,11 @@ namespace Ui4Vagrant.UI
             this.BtQueue.Text = "Work Queue: 0";
             this.BtQueue.Visible = false;
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
             // BkgExecuteCommands
             // 
             this.BkgExecuteCommands.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BkgExecuteCommands_DoWork);
@@ -130,12 +137,12 @@ namespace Ui4Vagrant.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(827, 530);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.consoleControl1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "VmControl";
-            this.Text = "Form1";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.VmControl_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -155,6 +162,7 @@ namespace Ui4Vagrant.UI
         private System.Windows.Forms.ToolStripMenuItem BtClearConsoleOutput;
         private System.ComponentModel.BackgroundWorker BkgExecuteCommands;
         private System.Windows.Forms.ToolStripMenuItem BtQueue;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

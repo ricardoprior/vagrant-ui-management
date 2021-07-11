@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Ui4Vagrant.Support;
@@ -39,6 +40,7 @@ namespace Ui4Vagrant.UI
             }
 
             string path = @$"{UserHome}\.vagrant.d\data\machine-index\index";
+            path = $@"_tmp\demo.json";
             if (File.Exists(path))
             {
                 list = JsonConvert.DeserializeObject<MachinesIndex>(File.ReadAllText(path));
@@ -56,6 +58,12 @@ namespace Ui4Vagrant.UI
                     Text = "No vms found."
                 });
                 return;
+            }
+
+            if (list.Machines.Count > 10)
+            {
+                flowLayoutPanel1.AutoScroll = true;
+                Size = new Size(859, 566);
             }
 
             foreach (VirtualMachine vm in list.Machines.Values)
