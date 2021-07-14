@@ -40,7 +40,6 @@ namespace Ui4Vagrant.UI
             }
 
             string path = @$"{UserHome}\.vagrant.d\data\machine-index\index";
-            path = $@"_tmp\demo.json";
             if (File.Exists(path))
             {
                 list = JsonConvert.DeserializeObject<MachinesIndex>(File.ReadAllText(path));
