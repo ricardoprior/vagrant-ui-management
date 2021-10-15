@@ -125,7 +125,10 @@ namespace Ui4Vagrant.UI
                 return;
             }
 
-            BkgLoadMachines.RunWorkerAsync(argument: true);
+            if (!BkgLoadMachines.IsBusy)
+            {
+                BkgLoadMachines.RunWorkerAsync(argument: true);
+            }
         }
 
         public void ExecuteCommand(string cmd)
