@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Ui4Vagrant.Support
-{
-    class MachinesIndex
-    {
-        [JsonProperty("version")]
-        public int Version { get; set; }
+namespace Ui4Vagrant.Support;
 
-        [JsonProperty("machines")]
-        public Dictionary<string, VirtualMachine> Machines { get; set; }
-    }
+internal class MachinesIndex
+{
+    [JsonProperty("version")]
+    public int Version { get; set; }
+
+    [JsonProperty("machines")]
+    public Dictionary<string, VirtualMachine> Machines { get; set; }
 }
